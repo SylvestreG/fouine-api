@@ -1,12 +1,10 @@
-use actix_web::{HttpResponse, web};
 use crate::FouineApiError;
+use actix_web::HttpResponse;
 
-pub struct UserController;
+pub struct AuthController;
 
 impl AuthController {
-    pub async fn register() ->  Result<HttpResponse, FouineApiError>  {
-        let user: User = User {
-
-        } ;
+    pub async fn register() -> Result<HttpResponse, FouineApiError> {
+        Ok(HttpResponse::Ok().body("Show users"))
     }
 }
