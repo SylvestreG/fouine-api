@@ -1,6 +1,6 @@
+use crate::errors::FouineApiError;
 use crate::users::entities::user::User;
 use crate::users::repositories::user::UserRepository;
-use crate::FouineApiError;
 use sqlx::PgPool;
 use std::sync::Arc;
 use uuid::Uuid;
@@ -12,7 +12,7 @@ pub struct UserService {
 impl UserService {
     pub fn new(pool: Arc<PgPool>) -> Self {
         UserService {
-            repository: UserRepository::new(pool.clone()),
+            repository: UserRepository::new(pool),
         }
     }
 

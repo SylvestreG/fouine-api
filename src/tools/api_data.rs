@@ -1,4 +1,4 @@
-use crate::FouineApiError;
+use crate::errors::FouineApiError;
 use sqlx::postgres::PgPoolOptions;
 use sqlx::PgPool;
 use std::env;

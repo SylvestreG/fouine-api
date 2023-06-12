@@ -37,18 +37,14 @@ impl actix_web::error::ResponseError for FouineApiError {
         });
 
         let payload = web::Json(match self {
-            FouineApiError::SqlxError(sqlx) => match sqlx {
-                sqlx::Error::RowNotFound => json!({
+            FouineApiError::SqlxError(sqlx::Error::RowNotFound) => json!({
                     "message": "Entity Missing",
                     "code": self.status_code().to_string()
                 }),
-                _ => generic_error,
-            },
             _ => generic_error,
         });
         HttpResponse::build(self.status_code())
-            .insert_header(ContentType::json()).json(
-            payload
-        )
+            .insert_header(ContentType::json())
+            .json(payload)
     }
 }

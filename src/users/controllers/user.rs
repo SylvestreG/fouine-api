@@ -1,10 +1,10 @@
 use crate::errors::FouineApiError;
+use crate::tools::api_data::ApiContext;
 use crate::tools::transformer::{transform_collection, transform_one};
 use crate::tools::uuid::check_uuid;
 use crate::users::entities::user::User;
 use crate::users::services::user::UserService;
 use crate::users::transformers::user::{SafeUser, UserTransformer};
-use crate::ApiContext;
 use actix_web::{web, HttpResponse, Responder};
 
 pub struct UserController;

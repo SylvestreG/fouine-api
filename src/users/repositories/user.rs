@@ -1,5 +1,5 @@
+use crate::errors::FouineApiError;
 use crate::users::entities::user::User;
-use crate::FouineApiError;
 use sqlx::PgPool;
 use std::sync::Arc;
 use uuid::Uuid;

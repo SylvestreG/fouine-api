@@ -1,5 +1,6 @@
 mod controllers;
-mod entities;
+pub mod entities;
+pub mod fixtures;
 mod repositories;
 mod services;
 mod transformers;

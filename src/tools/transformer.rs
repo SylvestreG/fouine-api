@@ -1,6 +1,5 @@
-use crate::FouineApiError;
+use crate::errors::FouineApiError;
 use actix_web::{web, Responder};
-use async_trait::async_trait;
 use serde::Serialize;
 use std::fmt::Debug;
 
@@ -15,7 +14,6 @@ pub struct Collection<To: Serialize> {
     pub meta: Meta,
 }
 
-#[async_trait]
 pub trait GenericTransformer<From, To: Debug> {
     fn transform(elem: From) -> To;
 }

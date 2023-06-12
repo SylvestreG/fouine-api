@@ -1,12 +1,9 @@
-mod errors;
-mod tools;
-mod users;
-
-use crate::errors::FouineApiError;
-use crate::tools::api_data::ApiContext;
 use actix_web::web::Data;
 use actix_web::{App, HttpServer};
 use dotenv::dotenv;
+use fouine_api::errors::FouineApiError;
+use fouine_api::tools::api_data::ApiContext;
+use fouine_api::users;
 use std::env;
 
 #[actix_web::main]
